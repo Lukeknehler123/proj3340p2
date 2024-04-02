@@ -26,10 +26,8 @@ $user_data = check_login($con);
 <script src="products.js"></script>
 <script src="cart.js"></script>
 <script>
-// You might place your products.js content here if not using an external file
 let products = [
     { id: 1, name: "Product 1", image: "images/product1.jpg", price: 10 },
-    // Add your product details here
 ];
 
 function displayProducts() {

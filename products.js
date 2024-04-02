@@ -19,9 +19,6 @@ let products = [
     { id: 18, name: "Product 18", image: "images/5570.jpg", price: 1340 },
     { id: 19, name: "Product 19", image: "images/5575.jpg", price: 130 },
     { id: 20, name: "Product 20", image: "images/5581.jpg", price: 10 },
-
-
-    // Include your 20 product objects here
 ];
 
 function displayProducts() {

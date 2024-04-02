@@ -4,13 +4,13 @@ session_start();
 include("connection.php");
 include("functions.php");
 
-$error_message = ""; // To store error messages
+$error_message = ""; 
 
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     $firstName = $_POST['firstname'] ?? '';
     $lastName = $_POST['lastname'] ?? '';
     $password = $_POST['password'] ?? '';
-    $adress = $_POST['adress'] ?? ''; // Updated to 'adress'
+    $adress = $_POST['adress'] ?? ''; 
     $phoneNumber = $_POST['number'] ?? '';
 
     if(empty($firstName)) {
@@ -22,16 +22,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     if(empty($password)) {
         $error_message .= "Password is required.<br>";
     }
-    if(empty($adress)) { // Updated to 'adress'
-        $error_message .= "Adress is required.<br>"; // Note the spelling in the message
+    if(empty($adress)) { 
+        $error_message .= "Adress is required.<br>"; 
     }
     if(empty($phoneNumber)) {
         $error_message .= "Phone number is required.<br>";
     }
 
     if(empty($error_message)) {
-        // All inputs are filled, proceed with saving to database
-        $query = "INSERT INTO users (firstname, lastname, password, adress, number) VALUES ('$firstName', '$lastName', '$password', '$adress', '$phoneNumber')"; // Updated to 'adress'
+
+        $query = "INSERT INTO users (firstname, lastname, password, adress, number) VALUES ('$firstName', '$lastName', '$password', '$adress', '$phoneNumber')"; 
         $result = mysqli_query($con, $query);
 
         if($result) {
@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" name="firstname" placeholder="First Name" value="<?php echo isset($_POST['firstname']) ? $_POST['firstname'] : ''; ?>"><br><br>
             <input type="text" name="lastname" placeholder="Last Name" value="<?php echo isset($_POST['lastname']) ? $_POST['lastname'] : ''; ?>"><br><br>
             <input type="password" name="password" placeholder="Password"><br><br>
-            <input type="text" name="adress" placeholder="Adress" value="<?php echo isset($_POST['adress']) ? $_POST['adress'] : ''; ?>"><br><br> <!-- Note the 'adress' spelling here too -->
+            <input type="text" name="adress" placeholder="Adress" value="<?php echo isset($_POST['adress']) ? $_POST['adress'] : ''; ?>"><br><br> 
             <input type="text" name="number" placeholder="Phone Number" value="<?php echo isset($_POST['number']) ? $_POST['number'] : ''; ?>"><br><br>
             <input type="submit" value="Signup"><br><br>
             
